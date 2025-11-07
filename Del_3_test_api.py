@@ -1,3 +1,5 @@
+# Detta är en testkommentar för att trigga GitHub Actions
+
 import requests
 import pytest
 
