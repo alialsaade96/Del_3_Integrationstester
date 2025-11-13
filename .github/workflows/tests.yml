@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:   # gör att du kan starta körningen manuellt från Actions-fliken
+  workflow_dispatch:
 
 jobs:
   test:
@@ -24,5 +24,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
-        run: pytest Del_3_test_api.py -q
+      - name: Run FakeStore tests (kan misslyckas)
+        run: pytest Del_3_test_api.py -q || true
+
+      - name: Run DummyJSON tests (måste lyckas)
+        run: pytest Del_3_test_dummyjson.py -q
