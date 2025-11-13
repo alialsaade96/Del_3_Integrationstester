@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run FakeStore tests (kan misslyckas)
-        run: pytest Del_3_test_api.py -q || true
+        run: pytest Del_3_fakestore_tests.py -q || true
 
       - name: Run DummyJSON tests (måste lyckas)
         run: pytest Del_3_test_dummyjson.py -q
